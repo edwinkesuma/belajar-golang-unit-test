@@ -2,10 +2,18 @@ package helper
 
 import "testing"
 
-func TestHelloWorld(test *testing.T) {
+func TestHelloEdwin(test *testing.T) {
 	result := HelloWorld("edwin")
 	if result != "Hello edwin" {
 		//error
-		panic("The result is not 'Hello edwin'")
+		test.Error("The result must be 'Hello edwin'")
+	}
+}
+
+func TestHelloKesuma(test *testing.T) {
+	result := HelloWorld("kesuma")
+
+	if result != "Hello kesuma" {
+		test.Fatal("The result must be 'Hello kesuma'")
 	}
 }
